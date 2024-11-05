@@ -42,6 +42,3 @@ IR_conv = IR_conv / (np.amax(np.abs(IR_conv)))
 
 # Save convolved audio into a .wav file
 scipy.io.wavfile.write(outfile, samplerate, IR_conv)
-
-
-# THIS IS A COMMENT :)
