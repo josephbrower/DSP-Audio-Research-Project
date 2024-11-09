@@ -2,15 +2,15 @@
 # File: ConvolutionFilter.py
 # Authors: Landon Bates, Ben Polzin
 # Reads in an impulse response file and an audio file and performs
-# an FIR convolution filter
+# a convolution filter
 ###############################################################################
 import numpy as np
 import scipy
 
 # Define Files
-IRfile = "RIR_3.wav"
-audiofile = "Drums1.wav"
-outfile = "BlondieRIR_3.wav"
+IRfile = "Test Files/Impulse Responses/HagiaSophiaIR.wav"
+audiofile = "Test Files/Sweeps/Sweep.wav"
+outfile = "Test Files/Sweeps/SweepSophia.wav"
 
 # Read in Impulse Response
 samplerateIR, IR = scipy.io.wavfile.read(IRfile)
