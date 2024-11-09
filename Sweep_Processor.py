@@ -2,7 +2,7 @@ import numpy as np
 import scipy
 
 # Read in Files
-samplerateRS, response = scipy.io.wavfile.read('Test Files/Sweeps/SweepOutput.wav')
+samplerateRS, response = scipy.io.wavfile.read('Test Files/Sweeps/SweepSophia.wav')
 samplerateSweep, sweep = scipy.io.wavfile.read('Test Files/Sweeps/Sweep.wav')
 
 # Normalize Audio
@@ -38,15 +38,16 @@ response_right = np.transpose(response_right)[0]
 sweep_left = np.transpose(sweep_left)[0]
 sweep_right = np.transpose(sweep_right)[0]
 
-sweep_left[0] = sweep_left[0] + 0.0000001
-sweep_right[0] = sweep_right[0] + 0.0000001
+#sweep_left[0] = sweep_left[0] + 0.0000001
+#sweep_right[0] = sweep_right[0] + 0.0000001
 
-remainder_left, IR_left = scipy.signal.deconvolve(response_left, sweep_left)
-remainder_right, IR_right = scipy.signal.deconvolve(response_right, sweep_right)
+IR_left = scipy.fft.ifft( scipy.fft.fft(response_left) / scipy.fft.fft(sweep_left) ).real
+IR_left = IR_left / np.max(np.abs(IR_left))
+
+IR_right = scipy.fft.ifft( scipy.fft.fft(response_right) / scipy.fft.fft(sweep_right) ).real
+IR_right = IR_right / np.max(np.abs(IR_right))
 
 IR = np.vstack([IR_left, IR_right])
 IR = np.transpose(IR)
-print(IR)
-print(response)
 
 scipy.io.wavfile.write("RecoveredImpulseResponse.wav", samplerateRS, IR)
