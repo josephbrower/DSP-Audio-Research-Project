@@ -8,7 +8,7 @@ from ConvolutionLibrary import deconvolve
 from scipy.io import wavfile
 
 # Read in Files
-samplerateRS, response = wavfile.read('Test Files/Sweeps/SweepSophia.wav')
+samplerateRS, response = wavfile.read('Test Files/Sweeps/SweepSophiaSimulated.wav')
 samplerateSweep, sweep = wavfile.read('Test Files/Sweeps/Sweep.wav')
 
 # Extract Impulse Response

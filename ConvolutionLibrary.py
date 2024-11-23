@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.fft import fft, ifft
 
+
 def normalize(audio):
     return audio / np.max(np.abs(audio))
 
