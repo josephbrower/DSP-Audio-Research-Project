@@ -6,7 +6,7 @@ from matplotlib.ticker import FuncFormatter, MultipleLocator
 from ConvolutionLibrary import normalize
 
 # Read in Impulse Response
-sample_rate, IR = wavfile.read("Test Files/Carvin4x10_Cabinet/Carvin4x10_SM57_ImpulseResponses/Carvin4x10_SM57_Quad_48in.wav")
+sample_rate, IR = wavfile.read("Test Files/Impulse Responses/Marshall_IR501.wav")
 #sample_rate, IR = wavfile.read("Marshall_IR501.wav")
 
 # Convert to Mono
