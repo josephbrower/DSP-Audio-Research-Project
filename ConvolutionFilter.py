@@ -8,9 +8,9 @@ import numpy as np
 import scipy
 
 # Define Files
-IRfile = "Test Files/Impulse Responses/Carvin4x10_SM57_Edge_3in.wav"
-audiofile = "DryGuitar.wav"
-outfile = "Test2.wav"
+IRfile = "Test Files/Impulse Responses/Marshall_IR501.wav"
+audiofile = "Test Files/Dry Audio/DryGuitar.wav"
+outfile = "Test.wav"
 
 # Read in Impulse Response
 samplerateIR, IR = scipy.io.wavfile.read(IRfile)

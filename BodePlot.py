@@ -7,7 +7,7 @@ from ConvolutionLibrary import normalize
 
 # Read in Impulse Response
 sample_rate, IR = wavfile.read("Test Files/Impulse Responses/Marshall_IR501.wav")
-#sample_rate, IR = wavfile.read("Marshall_IR501.wav")
+#sample_rate, IR = wavfile.read("Test Files/Impulse Responses/Carvin4x10_SM57_Edge_3in.wav")
 
 # Convert to Mono
 if IR.ndim > 1:
